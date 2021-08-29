@@ -135,7 +135,6 @@ systemctl enable glances.service
 systemctl start glances.service
 #
 mysql "use mysql; update user set plugin='' where User='root'; FLUSH PRIVILEGES;"
-
 #wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.sql
 #mysql -u root fix.sql 
 service mysql restart
