@@ -135,12 +135,12 @@ systemctl start glances.service
 systemctl enable glances.service
 systemctl start glances.service
 #
-mysql "use mysql; update user set plugin='' where User='root'; FLUSH PRIVILEGES;"
-#wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.sql
-#mysql -u root fix.sql 
+#mysql -u "use mysql; update user set plugin='' where User='root'; FLUSH PRIVILEGES;"
+wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.sql
+mysql -u root < fix.sql 
 service mysql restart
 systemctl restart apache2.service
-delay 30
+#delay 30
 clear
 #
 echo "your PHP Ver is :"
