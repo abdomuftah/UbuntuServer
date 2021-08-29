@@ -102,6 +102,7 @@ systemctl restart apache2
 wget -P /etc/apache2/sites-available https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/Example.conf
 cp /etc/apache2/sites-available/Example.conf /etc/apache2/sites-available/$domain.conf
 sed -i "s/example.com/$domain/g" /etc/apache2/sites-available/$domain.conf
+a2ensite $domain
 systemctl restart apache2
 #
 add-apt-repository -r ppa:ondrej/php -y
