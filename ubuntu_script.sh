@@ -76,7 +76,7 @@ apt-get upgrade -y
 echo "=================================="
 echo "installing PHP 7.4 + modules"
 echo "=================================="
-apt install -y php8.0 libapache2-mod-php8.0 php8.0-common php8.0-mbstring php8.0-xmlrpc php8.0-soap php8.0-gd php8.0-bz2 php8.0-xml php8.0-intl php8.0-mysql php8.0-cli php8.0-zip php8.0-curl php8.0-pdo php8.0-tokenizer php8.0-bcmath php8.0-fpm php8.0-imagick php8.0-tidy tar redis-server sed composer
+apt install -y php7.4 libapache2-mod-php7.4 php7.4-common php7.4-mbstring php7.4-xmlrpc php7.4-soap php7.4-gd php7.4-bz2 php7.4-xml php7.4-intl php7.4-mysql php7.4-cli php7.4-zip php7.4-curl php7.4-pdo php7.4-tokenizer php7.4-bcmath php7.4-fpm php7.4-imagick php7.4-tidy tar redis-server sed composer
 systemctl restart apache2.service
 #
 echo "=================================="
@@ -92,7 +92,7 @@ echo "=================================="
 echo "Update php.ini file "
 echo "=================================="
 #wget https://raw.githubusercontent.com/abdomuftah/Ubuntu-Script/master/php.ini && mv -f php.ini /etc/php/7.4/apache2/
-wget -O php.ini https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/php8.0.ini
+wget -O php.ini https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/php7.4.ini
 mv php.ini /etc/php/8.0/apache2/
 #
 a2enmod rewrite
