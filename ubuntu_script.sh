@@ -98,7 +98,7 @@ a2enmod rewrite
 systemctl restart apache2.service
 systemctl restart apache2
 #
-wget -P /etc/apache2/sites-available wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/Example.conf
+wget -P /etc/apache2/sites-available https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/Example.conf
 cp /etc/apache2/sites-available/Example.conf /etc/apache2/sites-available/$domain.conf
 sed -i "s/example.com/$domain/g" /etc/apache2/sites-available/$domain.conf
 systemctl restart apache2
