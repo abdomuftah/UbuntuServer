@@ -135,6 +135,7 @@ wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.s
 mysql -u root < fix.sql 
 service mysql restart
 systemctl restart apache2.service
+rm fix.sql 
 #
 echo "=================================="
 echo "Installing Let's Encrypt "
@@ -147,10 +148,12 @@ systemctl restart apache2.service
 echo "=================================="
 echo "Installing glances "
 echo "=================================="
-pip install --user 'glances[browser]'
+wget  https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/glances.sh
+chmod +x glances.sh
 wget -P /etc/systemd/system/ https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/glances.service
 systemctl start glances.service
 systemctl enable glances.service
+rm glances.sh
 #
 apt update
 apt upgrade -y
