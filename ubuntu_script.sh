@@ -108,12 +108,6 @@ wget -P /var/www/html/$domain https://raw.githubusercontent.com/abdomuftah/Ubunt
 a2ensite $domain
 systemctl restart apache2
 #
-add-apt-repository -r ppa:ondrej/php -y
-add-apt-repository -r ppa:phpmyadmin/ppa -y
-add-apt-repository -r ppa:webupd8team/java -y
-add-apt-repository -r ppa:chris-lea/redis-server -y
-add-apt-repository -r ppa:deadsnakes/ppa -y
-#
 apt update
 apt upgrade -y
 apt-get update 
@@ -155,6 +149,12 @@ wget -P /etc/systemd/system/ https://raw.githubusercontent.com/abdomuftah/Ubuntu
 systemctl start glances.service
 systemctl enable glances.service
 rm glances.sh
+#
+add-apt-repository -r ppa:ondrej/php -y
+add-apt-repository -r ppa:phpmyadmin/ppa -y
+add-apt-repository -r ppa:webupd8team/java -y
+add-apt-repository -r ppa:chris-lea/redis-server -y
+add-apt-repository -r ppa:deadsnakes/ppa -y
 #
 apt update
 apt upgrade -y
