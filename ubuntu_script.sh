@@ -61,7 +61,7 @@ echo "=================================="
 echo "installing mySQL :"
 echo "=================================="
 apt-get -y install mariadb-server mariadb-client
-# if Ubuntu 18.04+
+#
 systemctl stop mariadb.service
 systemctl start mariadb.service
 systemctl enable mariadb.service
@@ -129,12 +129,12 @@ apt-get update && apt-get upgrade -y
 systemctl restart apache2.service
 #
 echo "=================================="
-echo "Installing glances "
+echo "Fixing MySQL And phpMyAdmin"
 echo "=================================="
-pip install 'glances[browser]'
-wget -P /etc/systemd/system/ https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/glances.service
-systemctl enable glances.service
-systemctl start glances.service
+wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.sql
+mysql -u root < fix.sql 
+service mysql restart
+systemctl restart apache2.service
 #
 echo "=================================="
 echo "Installing Let's Encrypt "
@@ -144,20 +144,30 @@ systemctl restart apache2.service
 certbot renew --dry-run
 systemctl restart apache2.service
 #
-wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.sql
-mysql -u root < fix.sql 
-service mysql restart
-systemctl restart apache2.service
-systemctl enable glances.service
+echo "=================================="
+echo "Installing glances "
+echo "=================================="
+pip install --user 'glances[browser]'
+wget -P /etc/systemd/system/ https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/glances.service
 systemctl start glances.service
-clear
+systemctl enable glances.service
+#
+apt update
+apt upgrade -y
+apt-get update 
+apt-get upgrade -y
+#clear
 #
 echo "your PHP Ver is :"
 php -v 
 #
-echo ""
+echo "##################################"
 echo "You Can Thank Me On :) "
 echo "https://twitter.com/Scar_Naruto"
-echo "to cheack your server status go to http://$domain:61208 "
+echo "Join My Discord Server "
+echo "https://discord.snyt.xyz"
+echo "##################################"
+echo "to cheack your server status go to : "
+echo " http://$domain:61208  "
 #
 exit
