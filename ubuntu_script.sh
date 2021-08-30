@@ -94,7 +94,6 @@ echo "=================================="
 echo "Update php.ini file "
 echo "=================================="
 wget https://raw.githubusercontent.com/abdomuftah/Ubuntu-Script/master/php.ini && mv -f php.ini /etc/php/8.0/apache2/
-#wget -O php.ini https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/php8.0.ini
 mv php.ini /etc/php/8.0/apache2/
 #
 a2enmod rewrite
