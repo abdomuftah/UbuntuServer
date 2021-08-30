@@ -150,6 +150,7 @@ echo "Installing glances "
 echo "=================================="
 wget  https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/glances.sh
 chmod +x glances.sh
+./glances.sh
 wget -P /etc/systemd/system/ https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/glances.service
 systemctl start glances.service
 systemctl enable glances.service
