@@ -93,7 +93,7 @@ apt-get install -y phpmyadmin php8.0-gettext
 echo "=================================="
 echo "Update php.ini file "
 echo "=================================="
-wget https://raw.githubusercontent.com/abdomuftah/Ubuntu-Script/master/php.ini && mv -f php.ini /etc/php/8.0/apache2/
+wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/php.ini && mv -f php.ini /etc/php/8.0/apache2/
 #
 a2enmod rewrite
 systemctl restart apache2.service
@@ -104,6 +104,7 @@ wget -P /etc/apache2/sites-available https://raw.githubusercontent.com/abdomufta
 cp /etc/apache2/sites-available/Example.conf /etc/apache2/sites-available/$domain.conf
 sed -i "s/example.com/$domain/g" /etc/apache2/sites-available/$domain.conf
 rm /etc/apache2/sites-available/000-default.conf
+wget -P /var/www/html/$domain https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/index.php
 a2ensite $domain
 systemctl restart apache2
 #
