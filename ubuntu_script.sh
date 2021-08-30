@@ -94,7 +94,6 @@ echo "=================================="
 echo "Update php.ini file "
 echo "=================================="
 wget https://raw.githubusercontent.com/abdomuftah/Ubuntu-Script/master/php.ini && mv -f php.ini /etc/php/8.0/apache2/
-mv php.ini /etc/php/8.0/apache2/
 #
 a2enmod rewrite
 systemctl restart apache2.service
@@ -142,6 +141,7 @@ certbot --noninteractive --agree-tos --no-eff-email --cert-name $domain --apache
 systemctl restart apache2.service
 certbot renew --dry-run
 systemctl restart apache2.service
+#
 wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.sql
 mysql -u root < fix.sql 
 service mysql restart
