@@ -137,9 +137,9 @@ systemctl start glances.service
 echo "=================================="
 echo "Installing Let's Encrypt "
 echo "=================================="
-certbot --noninteractive --agree-tos --no-eff-email --cert-name $domain --apache --redirect -d $domain -m $email
+#certbot --noninteractive --agree-tos --no-eff-email --cert-name $domain --apache --redirect -d $domain -m $email
 systemctl restart apache2.service
-certbot renew --dry-run
+#certbot renew --dry-run
 systemctl restart apache2.service
 #
 wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.sql
