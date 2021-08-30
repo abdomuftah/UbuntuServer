@@ -12,8 +12,8 @@ echo "*      Domain with Let's Encrypt         *"
 echo "******************************************"
 echo ""
 #
-read -p 'Set Web Domain (Example: 127.0.0.1 [Not trailing slash!]) ' domain
-read -p 'Email for Lets Encrypt SSL ' email
+read -p 'Set Web Domain (Example: 127.0.0.1 [Not trailing slash!]) : ' domain
+read -p 'Email for Lets Encrypt SSL : ' email
 
 #
 apt update
