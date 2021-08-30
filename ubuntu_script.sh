@@ -103,6 +103,7 @@ mkdir /var/www/html/$domain
 wget -P /etc/apache2/sites-available https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/Example.conf
 cp /etc/apache2/sites-available/Example.conf /etc/apache2/sites-available/$domain.conf
 sed -i "s/example.com/$domain/g" /etc/apache2/sites-available/$domain.conf
+rm /etc/apache2/sites-available/000-default.conf
 a2ensite $domain
 systemctl restart apache2
 #
