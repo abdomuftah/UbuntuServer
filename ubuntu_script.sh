@@ -101,6 +101,7 @@ a2enmod rewrite
 systemctl restart apache2.service
 systemctl restart apache2
 #
+mkdir /var/www/html/$domain
 wget -P /etc/apache2/sites-available https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/Example.conf
 cp /etc/apache2/sites-available/Example.conf /etc/apache2/sites-available/$domain.conf
 sed -i "s/example.com/$domain/g" /etc/apache2/sites-available/$domain.conf
@@ -134,22 +135,20 @@ pip install 'glances[browser]'
 wget -P /etc/systemd/system/ https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/glances.service
 systemctl enable glances.service
 systemctl start glances.service
-systemctl enable glances.service
-systemctl start glances.service
 #
 echo "=================================="
 echo "Installing Let's Encrypt "
 echo "=================================="
-certbot --apache -d $domain --non-interactive --agree-tos -m $email
+certbot --noninteractive --agree-tos --no-eff-email --cert-name $domain --apache --redirect -d $domain -m $email
 systemctl restart apache2.service
 certbot renew --dry-run
 systemctl restart apache2.service
-#mysql -u "use mysql; update user set plugin='' where User='root'; FLUSH PRIVILEGES;"
 wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/fix.sql
 mysql -u root < fix.sql 
 service mysql restart
 systemctl restart apache2.service
-#delay 30
+systemctl enable glances.service
+systemctl start glances.service
 clear
 #
 echo "your PHP Ver is :"
