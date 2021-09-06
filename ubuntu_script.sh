@@ -160,7 +160,7 @@ apt update
 apt upgrade -y
 apt-get update 
 apt-get upgrade -y
-#clear
+clear
 #
 echo "your PHP Ver is :"
 php -v 
