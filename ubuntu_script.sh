@@ -76,9 +76,9 @@ apt-get update
 apt-get upgrade -y
 #
 echo "=================================="
-echo "installing PHP 8.0 + modules"
+echo "installing PHP 8.1 + modules"
 echo "=================================="
-apt install -y php8.0 libapache2-mod-php8.0 php8.0-common php8.0-mbstring php8.0-xmlrpc php8.0-soap php8.0-gd php8.0-bz2 php8.0-xml php8.0-intl php8.0-mysql php8.0-cli php8.0-zip php8.0-curl php8.0-pdo php8.0-tokenizer php8.0-bcmath php8.0-fpm php8.0-imagick php8.0-tidy tar redis-server sed composer
+apt install -y php8.1 libapache2-mod-php8.1 php8.1-common php8.1-mbstring php8.1-xmlrpc php8.1-soap php8.1-gd php8.1-bz2 php8.1-xml php8.1-intl php8.1-mysql php8.1-cli php8.1-zip php8.1-curl php8.1-pdo php8.1-tokenizer php8.1-bcmath php8.1-fpm php8.1-imagick php8.1-tidy tar redis-server sed composer
 systemctl restart apache2.service
 #
 echo "=================================="
@@ -88,7 +88,7 @@ apt update
 apt upgrade -y
 apt-get update 
 apt-get upgrade -y
-apt-get install -y phpmyadmin php8.0-gettext
+apt-get install -y phpmyadmin php8.1-gettext
 #
 echo "=================================="
 echo "Update php.ini file "
