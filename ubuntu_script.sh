@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-clear
+apt -y install screen
+screen -S server
 echo ""
 echo "******************************************"
 echo "*   Scar Naruto UBUNTU 18 + Script       *"
@@ -164,6 +165,8 @@ apt upgrade -y
 apt-get update 
 apt-get upgrade -y
 clear
+#
+exit
 #
 echo "your PHP Ver is :"
 php -v 
