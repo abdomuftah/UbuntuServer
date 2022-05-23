@@ -155,8 +155,8 @@ add-apt-repository -r ppa:webupd8team/java -y
 add-apt-repository -r ppa:chris-lea/redis-server -y
 add-apt-repository -r ppa:deadsnakes/ppa -y
 #
-wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/domain.sh
-chmod +x domain.sh
+wget https://raw.githubusercontent.com/abdomuftah/UbuntuServer/main/assets/sdomain.sh
+chmod +x sdomain.sh
 #
 apt update
 apt upgrade -y
@@ -174,7 +174,7 @@ echo "Join My Discord Server "
 echo "https://discord.snyt.xyz"
 echo "##################################"
 echo "you can add new domain to your server  "
-echo "by typing : ./domain.sh in the terminal  "
+echo "by typing : ./sdomain.sh in the terminal  "
 echo "##################################"
 echo "to cheack your server status go to : "
 echo " http://$domain:61208  "
