@@ -1,7 +1,5 @@
 #!/bin/bash
 #
-apt -y install screen
-screen -S server
 echo ""
 echo "******************************************"
 echo "*   Scar Naruto UBUNTU 18 + Script       *"
